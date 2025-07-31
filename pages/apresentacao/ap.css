@@ -1,0 +1,62 @@
+
+
+.section-header {
+    padding-inline: 25%;
+}
+
+.section-title {
+    margin-top: 10%;
+}
+
+.service-description {
+    font-size: 20px;
+    margin-top: 6%;
+}
+
+
+
+.services {
+    padding: 10rem 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 10%;
+}
+
+.service-card {
+  background: var(--bg-white);
+  padding: 2.5rem 10rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-down-arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+.nav-list {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
