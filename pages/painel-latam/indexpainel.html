@@ -20,6 +20,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
 
+
+
+
 </head>
 <body class="bg-white text-black h-screen flex flex-col font-sans overflow-hidden">
 
@@ -158,12 +161,20 @@
 
     let ultimosPesos = [];
 
-    function tocarSom(url, id, set) {
-      if (set.has(id)) return;
-      const audio = new Audio(url);
-      audio.play().catch(() => {});
-      set.add(id);
-    }
+  function tocarSom(url, id, set, volume = 1.0) {
+  if (set.has(id)) return;
+  const audio = new Audio(url);
+  audio.volume = 1.0;
+  audio.play().catch(() => {});
+  set.add(id);
+}
+
+function tocarSomAlerta() {
+  const audio = new Audio('som-alerta.mp3');
+  audio.volume = 1.0; 
+  audio.play().catch(e => console.log('Erro ao tocar som:', e));
+}
+
 
     function atualizarRelogio() {
       const agora = new Date();
@@ -194,6 +205,8 @@
     console.error('Erro ao buscar dados.', e);
   }
 }
+
+
 
 function atualizarMalha(dadosMalha) {
   const novos = dadosMalha.filter(item => !ultimosPesos.includes(item.pesodecorte));
@@ -238,12 +251,9 @@ if (scrollContainer) {
 
 }
 
-function tocarSomAlerta() {
-  const audio = new Audio('i-am-here.mp3');
-  audio.play().catch(e => console.log('Erro ao tocar som:', e));
-}
 
-// 2. No seu if, toque o som
+
+
 if (novos.find(n => n.pesodecorte === item.pesodecorte)) {
   tr.children[4].classList.add('animate-pulse');
   tr.children[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -299,7 +309,8 @@ function atualizarResumo(dadosResumo) {
 
       if (diffLimite <= 5 * 60 * 1000 && !item.crosscheck_amadeus) {
         if (!sinosTocados.has(vooId)) {
-          tocarSom('no-problem.mp3', vooId + '_sino', sinosTocados);
+      tocarSom('i-am-here.mp3', vooId + '_sino', sinosTocados, 1.0);
+          
         }
 
         tr.classList.add('bg-red-600', 'text-white');
