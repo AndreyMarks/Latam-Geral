@@ -60,3 +60,22 @@
     margin-bottom: 15px;
     margin-right: 20px;
 }
+
+@media (max-width: 768px) {
+
+    .service-description {
+        font-size: 14px;
+    }
+
+    .service-card {
+
+        display: flex;              /* Permite alinhamentos */
+        justify-content: center;    /* Alinha o conteúdo no centro horizontal */
+        align-items: center;       
+        flex-direction: column;    /
+    }
+
+
+
+    
+}

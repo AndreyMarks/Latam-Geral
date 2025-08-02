@@ -43,15 +43,22 @@ function prevSlide() {
 }
 
 // Auto slide functionality
-let autoSlideInterval;
+let autoSlideInterval = null;
 
 function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  if (autoSlideInterval !== null) return; // já está rodando
+  autoSlideInterval = setInterval(() => {
+    nextSlide();
+  }, 5000);
 }
 
 function stopAutoSlide() {
+  if (autoSlideInterval !== null) {
     clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
 }
+
 
 // Event listeners for slider
 nextBtn.addEventListener('click', () => {

@@ -344,6 +344,7 @@ body {
   color: var(--text-dark);
   margin-bottom: 1rem;
   position: relative;
+  margin-top: 2rem;;
 }
 
 .section-title::after {
@@ -468,6 +469,11 @@ body {
   font-weight: 500;
 }
 
+
+.iframes{
+  margin-bottom: 50px;
+}
+
 /* Footer */
 .footer {
   background: var(--text-dark);
@@ -555,16 +561,21 @@ body {
     display: none;
   }
 
+  .hero {
+    height: 85vh;
+  }
   .slide-title {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
 
   .slide-description {
-    font-size: 1.1rem;
+    font-size: 0.5rem;
   }
 
+
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
   }
 
   .services-grid {
@@ -589,7 +600,16 @@ body {
     height: 40px;
     font-size: 1.2rem;
   }
+
 }
+
+.frame  {
+   display: flex;             
+        justify-content: center;    
+        align-items: center;       
+        flex-direction: column;    /
+}
+
 
 @media (max-width: 480px) {
   .container {
