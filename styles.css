@@ -611,6 +611,38 @@ body {
 }
 
 
+
+
+.buttonletter {
+    position: absolute;
+    bottom: 35px;
+    left: 7.3vw;
+    height: 6vh;
+    padding: 10px 80px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonletter2 {
+    position: absolute;
+    bottom: 35px;
+    left: 52.5vw;
+    height: 6vh;
+    padding: 10px 80px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#news{
+  padding: 4rem;
+  padding-top: 8rem;
+}
+  
+
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
@@ -635,7 +667,28 @@ body {
   .stat-number {
     font-size: 2.5rem;
   }
+
+.buttonletter {
+  left: 10%;
+  height: 4vh;
+  width: 25%;
 }
+
+.buttonletter2 {
+  left: 10%;
+  height: 4vh;
+  width: 25%;
+}
+
+#news{
+  padding: 4rem;
+  padding-top: 8rem;
+}
+
+}
+
+
+
 
 /* Smooth scrolling */
 html {
