@@ -3,52 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Cargas - LATAM</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- SEO Meta Tags -->
+    <title>Portal Cargas LATAM - Soluções Logísticas Aéreas | Transporte de Cargas</title>
+    <meta name="description" content="Portal oficial da LATAM Cargas oferecendo soluções completas em logística aérea, planejamento de rotas, análises de performance e segurança no transporte de cargas para toda América Latina.">
+    <meta name="keywords" content="LATAM cargas, transporte aéreo, logística, carga aérea, América Latina, planejamento logístico, análises de performance, segurança de cargas">
+    <meta name="author" content="LATAM Cargas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://latam-cargas.com/">
+    <meta property="og:title" content="Portal Cargas LATAM - Soluções Logísticas Aéreas">
+    <meta property="og:description" content="Soluções completas em logística aérea, planejamento de rotas e análises de performance para transporte de cargas.">
+    <meta property="og:image" content="./images/logo_header.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://latam-cargas.com/">
+    <meta property="twitter:title" content="Portal Cargas LATAM - Soluções Logísticas Aéreas">
+    <meta property="twitter:description" content="Soluções completas em logística aérea, planejamento de rotas e análises de performance para transporte de cargas.">
+    <meta property="twitter:image" content="./images/logo_header.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./images/logo_header.svg">
+    <link rel="alternate icon" href="./images/logo_header.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://latam-cargas.com/">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LATAM Cargas",
+      "url": "https://latam-cargas.com",
+      "logo": "./images/logo_header.svg",
+      "description": "Soluções completas em logística aérea e transporte de cargas para América Latina",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
-                <img src="./images/logo_header.svg" alt="LATAM Cargas" class="logo-img">
+                <img src="./images/logo_header.svg" alt="LATAM Cargas - Logística Aérea" class="logo-img">
             </div>
             
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Menu principal">
                 
                 <ul class="nav-list">
-                    <li><a href="#atendimento" class="nav-link">Atendimento</a></li>
+                    <li><a href="#analises" class="nav-link">Ferramentas</a></li>
                     <li><a href="./pages/painel-latam/indexpainel.html" class="nav-link">Planejamento</a></li>
-                    <li><a href="#melhoria" class="nav-link">Melhoria</a></li>
-                    <li><a href="#seguranca" class="nav-link">Segurança</a></li>
+                    <li><a href="./pages/servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li><a href="./pages/sobre/index.html" class="nav-link">Sobre</a></li>
+                    <li><a href="./pages/contato/index.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
 
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-                <div class="bar-content"></div>
-
+        <div class="bar-content" aria-hidden="true"></div>
     </header>
 
 
 
     
     <!-- Hero Section -->
-    <main>
-        <section class="hero">
+    <main role="main">
+        <section class="hero" aria-label="Apresentação principal">
             
-            <div class="hero-slider">
+            <div class="hero-slider" role="region" aria-label="Carrossel de apresentação">
 
-                <div class="slide active">
+                <article class="slide active">
                     <div class="slide-bg">
-                        <img src="images/notices/background.png" alt="Background" class="slide-img">
+                        <img src="images/notices/background.png" alt="Fundo com aviões da LATAM" class="slide-img">
                     </div>
                     <div class="slide-content">
                         <div class="container">
@@ -56,44 +105,36 @@
                                 <h1 class="slide-title">Novo sistema! Veja nossa apresentação.</h1>
                                 <p class="slide-description"> Este sistema foi desenvolvido para oferecer mais agilidade, transparência e controle nas operações logísticas da LATAM. <br>
                                      Aqui, você encontra ferramentas inteligentes para planejamento, análise, segurança e melhoria contínua no transporte aéreo de cargas.</p>
-                                <a href="pages/apresentacao/apresentation.html" class="cta-button">Explorar</a>
+                                <a href="pages/apresentacao/apresentation.html" class="cta-button" aria-describedby="slide-desc-1">Explorar</a>
+                                <span id="slide-desc-1" class="sr-only">Acesse a apresentação do novo sistema LATAM</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
-
-
-
-
-
-                <div class="slide">
+                <article class="slide">
                     <div class="slide-bg">
-                        <img src="images/notices/background.png" alt="Background" class="slide-img">
+                        <img src="images/notices/background.png" alt="Fundo com aviões da LATAM" class="slide-img">
                     </div>
                     <div class="slide-content">
                         <div class="container">
                             <div class="slide-text">
                                 <h1 class="slide-title">Fique atento!</h1>
                                 <p class="slide-description"> Se informe sobre as atividades diarias, assine os briefings diarios!🧑‍🚒</p>
-                                <a href="#analises" class="cta-button">Assinar</a>
+                                <a href="#analises" class="cta-button" aria-describedby="slide-desc-2">Assinar</a>
+                                <span id="slide-desc-2" class="sr-only">Assine os briefings diários da LATAM</span>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-
-
-
+                </article>
             </div>
 
             <!-- Slider Controls -->
-            <div class="slider-controls">
+            <div class="slider-controls" role="group" aria-label="Controles do carrossel">
                 <button class="slider-btn prev" aria-label="Slide anterior">‹</button>
-                <div class="slider-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="slider-dots" role="tablist" aria-label="Navegação dos slides">
+                    <button class="dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                    <button class="dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
                 </div>
                 <button class="slider-btn next" aria-label="Próximo slide">›</button>
             </div>

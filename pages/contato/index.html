@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contato LATAM Cargas - Fale Conosco | Suporte e Atendimento</title>
+    <meta name="description" content="Entre em contato com a LATAM Cargas. Suporte técnico 24/7, atendimento especializado e canais de comunicação para todas as suas necessidades logísticas.">
+    <meta name="keywords" content="contato LATAM, suporte técnico, atendimento, fale conosco, logística aérea, suporte 24/7">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contato LATAM Cargas - Fale Conosco">
+    <meta property="og:description" content="Entre em contato conosco. Suporte técnico 24/7 e atendimento especializado.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://latam-cargas.com/pages/contato/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://latam-cargas.com/pages/contato/">
+    
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a0a7a 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 79.5px;
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-content {
+            padding: 4rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-info {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(18, 0, 105, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #01163d 50%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+            min-width: 60px;
+        }
+        
+        .contact-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            margin-top: 4rem;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 1rem;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-form,
+            .contact-info,
+            .faq-section {
+                padding: 2rem 1rem;
+                margin: 0 1rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../images/logo_header.svg" alt="LATAM Cargas - Logística Aérea" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav-list">
+                    <li><a href="../../index.html" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/index.html" class="nav-link">Sobre</a></li>
+                    <li><a href="../servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li><a href="index.html" class="nav-link" aria-current="page">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="bar-content" aria-hidden="true"></div>
+    </header>
+
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Fale Conosco</h1>
+                <p>Estamos aqui para ajudar você com todas as suas necessidades logísticas</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-content">
+            <div class="container">
+                
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Envie sua Mensagem</h2>
+                        <form id="contactForm" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Assunto *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="cotacao">Solicitação de Cotação</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="reclamacao">Reclamação</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="parceria">Parceria</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensagem *</label>
+                                <textarea id="message" name="message" placeholder="Descreva sua solicitação ou dúvida..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h2 style="color: var(--primary-color); margin-bottom: 2rem;">Informações de Contato</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Suporte 24/7</h4>
+                                <p>+55 (11) 4000-1234<br>
+                                   +55 (11) 4000-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>E-mail</h4>
+                                <p>contato@latamcargas.com<br>
+                                   suporte@latamcargas.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Endereço</h4>
+                                <p>Av. das Nações, 1234<br>
+                                   São Paulo - SP, 01234-567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-details">
+                                <h4>Horário de Atendimento</h4>
+                                <p>Segunda a Sexta: 8h às 18h<br>
+                                   Sábado: 8h às 12h<br>
+                                   Emergências: 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 style="color: var(--primary-color); margin-bottom: 2rem; text-align: center;">Perguntas Frequentes</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como posso rastrear minha carga?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Você pode rastrear sua carga através do nosso portal online ou entrando em contato com nossa central de atendimento. Basta informar o número do conhecimento aéreo (AWB).
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Qual o prazo de entrega para cargas nacionais?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            O prazo varia conforme o destino, mas geralmente é de 1 a 3 dias úteis para cargas nacionais. Para prazos específicos, consulte nossa equipe comercial.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como solicitar uma cotação?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Você pode solicitar uma cotação através do formulário acima, por telefone ou e-mail. Informe origem, destino, peso, dimensões e tipo de carga para um orçamento preciso.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quais tipos de carga vocês transportam?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Transportamos diversos tipos de carga, incluindo produtos industriais, perecíveis, farmacêuticos, eletrônicos e cargas especiais. Consulte-nos para cargas específicas.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Vocês oferecem seguro para as cargas?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Sim, oferecemos cobertura de seguro completa para todas as cargas transportadas. Os detalhes da cobertura são informados no momento da contratação.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../../images/logo_header.svg" alt="LATAM Cargas" class="footer-logo">
+                    <p class="footer-text">Conectando o mundo através de soluções inovadoras em logística aérea.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="../sobre/index.html">Sobre</a></li>
+                        <li><a href="../servicos/index.html">Serviços</a></li>
+                        <li><a href="index.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+5511400012345">+55 (11) 4000-1234</a></li>
+                        <li><a href="mailto:contato@latamcargas.com">contato@latamcargas.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LATAM Cargas OPS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script>
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
