@@ -147,7 +147,6 @@ body {
   position: relative;
   height: 65vh;
   overflow: hidden;
-  margin-top: 70px;
 }
 
 .hero-slider {
@@ -602,10 +601,6 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
   }
 
-  .hero {
-    height: 70vh;
-    margin-top: 79.5px;
-  }
   
   .slide-title {
     font-size: 2.2rem;
@@ -848,8 +843,7 @@ a:focus {
   }
 
   .hero {
-    height: 60vh;
-    margin-top: 70px;
+    height: 55vh;
   }
 
   .slide-title {
@@ -1001,6 +995,7 @@ img {
 @media (max-width: 768px) and (orientation: landscape) {
   .hero {
     height: 90vh;
+
   }
   
   .slide-title {

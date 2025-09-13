@@ -16,7 +16,7 @@ class InternalNotificationSystem {
             },
             {
                 icon: "🎯",
-                text: "Meta mensal de eficiência: 87% alcançado - Parabéns equipe!",
+                text: "Meta mensal de eficiência: 97% alcançado - Parabéns equipe!",
                 priority: "low"
             },
             {
@@ -133,9 +133,9 @@ class SystemStatusMonitor {
 class ShiftInformation {
     constructor() {
         this.shifts = [
-            { name: 'Manhã', start: '06:00', end: '14:00', supervisor: 'Carlos Silva' },
-            { name: 'Tarde', start: '14:00', end: '22:00', supervisor: 'Ana Santos' },
-            { name: 'Noite', start: '22:00', end: '06:00', supervisor: 'Roberto Lima' }
+            { name: 'Manhã', start: '06:00', end: '14:00', supervisor: 'Felipe, Ayra' },
+            { name: 'Tarde', start: '14:00', end: '22:00', supervisor: 'Humberto' },
+            { name: 'Noite', start: '22:00', end: '06:00', supervisor: 'Daisy, William' }
         ];
         this.init();
     }

@@ -53,10 +53,11 @@
 .internal-notifications {
   background: linear-gradient(135deg, #e20074 0%, #120069 100%);
   color: white;
-  padding: 1rem 0;
   position: relative;
   overflow: hidden;
+  padding-top: 5%;
 }
+
 
 .notification-content {
   display: flex;
@@ -254,6 +255,13 @@
   .notification-content {
     font-size: 0.9rem;
   }
+
+.internal-notifications{
+  padding-top: 5%;
+  margin-top: 20%;
+}
+
+
 }
 
 /* Melhorias de acessibilidade para funcionários */
