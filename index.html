@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Portal Interno LATAM Cargas - Ferramentas e Gestão Operacional</title>
+    <meta name="description" content="Portal interno da LATAM Cargas, com ferramentas e informações essenciais para funcionários, supervisores e gerentes de logística aérea. Acesso a planejamento, análises de performance e gestão de segurança.">
+    <meta name="keywords" content="LATAM cargas, transporte aéreo, logística, carga aérea, América Latina, planejamento logístico, análises de performance, segurança de cargas">
+    <meta name="author" content="LATAM Cargas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://latam-cargas.com/">
+    <meta property="og:title" content="Portal Interno LATAM Cargas - Ferramentas e Gestão Operacional">
+    <meta property="og:description" content="Ferramentas e informações essenciais para funcionários, supervisores e gerentes de logística aérea da LATAM Cargas.">
+    <meta property="og:image" content="./images/logo_header.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://latam-cargas.com/">
+    <meta property="twitter:title" content="Portal Cargas LATAM - Soluções Logísticas Aéreas">
+    <meta property="twitter:description" content="Soluções completas em logística aérea, planejamento de rotas e análises de performance para transporte de cargas.">
+    <meta property="twitter:image" content="./images/logo_header.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./images/logo_header.svg">
+    <link rel="alternate icon" href="./images/logo_header.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://latam-cargas.com/">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-additional.css">
+    <link rel="stylesheet" href="internal-features.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LATAM Cargas",
+      "url": "https://latam-cargas.com",
+      "logo": "./images/logo_header.svg",
+      "description": "Soluções completas em logística aérea e transporte de cargas para América Latina",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo_header.svg" alt="LATAM Cargas - Logística Aérea" class="logo-img">
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
+                
+                <ul class="nav-list">
+                    <li><a href="#analises" class="nav-link">Dashboard</a></li>
+                    <li><a href="./pages/painel-latam/indexpainel.html" class="nav-link">Planejamento</a></li>
+                    <li><a href="#news" class="nav-link">Comunicados</a></li>
+                    <li><a href="./pages/servicos/index.html" class="nav-link">Recursos</a></li>
+                    <li><a href="./pages/contato/index.html" class="nav-link">Suporte</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="bar-content" aria-hidden="true"></div>
+    </header>
+
+    <!-- Notificações Internas -->
+    <div class="internal-notifications">
+        <div class="notification-content">
+            <span class="notification-icon">📢</span>
+            <span class="notification-text">Atenção equipe: Nova atualização do sistema de cargas disponível - Treinamento obrigatório até 20/09</span>
+            <span class="notification-icon">•</span>
+            <span class="notification-text">Reunião de supervisores hoje às 14h - Sala de conferências</span>
+            <span class="notification-icon">•</span>
+            <span class="notification-text">Meta mensal de eficiência: 87% alcançado - Parabéns equipe!</span>
+        </div>
+    </div>
+
+
+
+    
+    <!-- Hero Section -->
+    <main role="main">
+        <section class="hero" aria-label="Apresentação principal">
+            
+            <div class="hero-slider" role="region" aria-label="Carrossel de apresentação">
+
+                <article class="slide active">
+                    <div class="slide-bg">
+                        <img src="images/notices/background.png" alt="Fundo com aviões da LATAM" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <div class="container">
+                            <div class="slide-text">
+                                <h1 class="slide-title">Bem-vindo ao Portal Interno LATAM Cargas!</h1>
+                                <p class="slide-description"> Este portal foi desenvolvido para otimizar suas operações diárias, oferecendo acesso rápido a ferramentas, análises e informações cruciais para funcionários, supervisores e gerentes.</p>
+                                <a href="pages/apresentacao/apresentation.html" class="cta-button" aria-describedby="slide-desc-1">Explorar</a>
+                                <span id="slide-desc-1" class="sr-only">Acesse a apresentação do novo sistema LATAM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="slide">
+                    <div class="slide-bg">
+                        <img src="images/notices/background.png" alt="Fundo com aviões da LATAM" class="slide-img">
+                    </div>
+                    <div class="slide-content">
+                        <div class="container">
+                            <div class="slide-text">
+                                <h1 class="slide-title">Mantenha-se Atualizado com Nossas Notícias Internas!</h1>
+                                <p class="slide-description"> Acesse comunicados importantes, atualizações operacionais e briefings diários exclusivos para a equipe de cargas da LATAM.</p>
+                                <a href="#analises" class="cta-button" aria-describedby="slide-desc-2">Assinar</a>
+                                <span id="slide-desc-2" class="sr-only">Assine os briefings diários da LATAM</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls" role="group" aria-label="Controles do carrossel">
+                <button class="slider-btn prev" aria-label="Slide anterior">‹</button>
+                <div class="slider-dots" role="tablist" aria-label="Navegação dos slides">
+                    <button class="dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                    <button class="dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                </div>
+                <button class="slider-btn next" aria-label="Próximo slide">›</button>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="analises">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ferramentas Essenciais para a Equipe</h2>
+                    <p class="section-subtitle">Recursos e sistemas para otimizar suas operações diárias.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3 class="service-title">Análises</h3>
+                        <p class="service-description">Acesse dashboards e relatórios de performance para monitorar e otimizar suas operações de carga.</p>
+                        <a href="#" class="service-link">Ver mais</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">Melhoria</h3>
+                        <p class="service-description">Metodologias e treinamentos para aprimorar continuamente a eficiência e qualidade dos processos.</p>
+                        <a href="#" class="service-link">Ver mais</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h3 class="service-title">Extensão</h3>
+                        <p class="service-description">Informações sobre novas rotas, capacidades e expansão de serviços para planejamento estratégico.</p>
+                        <a href="#" class="service-link">Ver mais</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">🔒</div>
+                        <h3 class="service-title">Segurança</h3>
+                        <p class="service-description">Diretrizes e procedimentos de segurança para garantir a integridade e conformidade das cargas.</p>
+                        <a href="#" class="service-link">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Acesso Rápido para Funcionários -->
+        <section class="quick-access">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Acesso Rápido</h2>
+                    <p class="section-subtitle">Ferramentas e informações mais utilizadas pela equipe</p>
+                </div>
+                
+                <div class="quick-access-grid">
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">⏰</span>
+                        <h4 class="quick-access-title">Ponto Eletrônico</h4>
+                        <p class="quick-access-desc">Registrar entrada/saída</p>
+                    </div>
+                    
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">📋</span>
+                        <h4 class="quick-access-title">Checklist Diário</h4>
+                        <p class="quick-access-desc">Verificações obrigatórias</p>
+                    </div>
+                    
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">📞</span>
+                        <h4 class="quick-access-title">Contatos Internos</h4>
+                        <p class="quick-access-desc">Ramais e emergências</p>
+                    </div>
+                    
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">📚</span>
+                        <h4 class="quick-access-title">Manuais</h4>
+                        <p class="quick-access-desc">Procedimentos e guias</p>
+                    </div>
+                    
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">🎯</span>
+                        <h4 class="quick-access-title">Metas do Setor</h4>
+                        <p class="quick-access-desc">Acompanhar objetivos</p>
+                    </div>
+                    
+                    <div class="quick-access-item">
+                        <span class="quick-access-icon">🔧</span>
+                        <h4 class="quick-access-title">Manutenção</h4>
+                        <p class="quick-access-desc">Solicitar reparos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+<section class="indicadores">
+
+
+
+            <div class="container">
+
+            <section class="indicadores">
+            <div class="container">
+                <div class="iframes">
+                <div class="section-header">
+                    <h2 class="section-title">Indicadores de Performance - Gestão Interna</h2>
+                    <p class="section-subtitle"> Acompanhe métricas essenciais e o desempenho de cada setor em tempo real. </p>
+                </div>    
+                <div class="frame">
+                <iframe 
+                width="80%" 
+                height="600" 
+                src="https://lookerstudio.google.com/embed/reporting/78c38528-8bbd-4493-83f1-bd3deecc283e/page/p_2z27nvxopd" 
+                frameborder="0" 
+                style="border:0" 
+                allowfullscreen>
+                
+                </iframe>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            
+
+            </div>
+        </section>
+
+
+
+
+<div>
+
+
+
+<section class="services" id="news">
+            <div class="container">
+        
+                    <div style="position: relative; display: inline-block;">
+                    <img src="./images/BannerNews.png" alt="Briefing diario" style="width: 40%; margin-left: 5%;">
+                  <a href="https://lookerstudio.google.com/u/0/reporting/3990c064-832b-4366-90fb-6e0696d7dd71/page/p_rthqz1w6dd">  <button class="buttonletter">
+                        Clique aqui
+                     </button> </a>
+
+                 <img src="./images/News2.png" alt="Novidades" style="width: 40%; margin-left: 10%;">
+                  <a href="umaredeai">  <button class="buttonletter2">
+                        Clique aqui
+                     </button> </a>
+
+
+            </div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Destinos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+Justos</div>
+                        <div class="stat-label">Proporcionando o melhor</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+Empaticos</div>
+                        <div class="stat-label">Trazendo diversidade</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+Transparentes  </div>
+                        <div class="stat-label">100% Confiabilidade</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+Simples</div>
+                        <div class="stat-label">Proporcionando agilidade</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+
+
+
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="./images/logo_header.svg" alt="LATAM Cargas" class="footer-logo">
+                    <p class="footer-text">Conectando o mundo através de soluções inovadoras.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Serviços</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Carga Aérea</a></li>
+                        <li><a href="#">Roterizador</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Suporte Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LATAM Cargas OPS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="internal-functions.js"></script>
+</body>
+</html>
+

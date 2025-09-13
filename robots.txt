@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://latam-cargas.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /pages/
+Allow: /images/
+Allow: /styles.css
+Allow: /script.js
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+

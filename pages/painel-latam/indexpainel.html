@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel LATAM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    input[type=checkbox] {
+      pointer-events: none; 
+      transform: scale(1.2);
+    }
+  </style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+
+
+
+</head>
+<body class="bg-white text-black h-screen flex flex-col font-sans overflow-hidden">
+
+
+
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-50 gap-4">
+  <div class="text-center">
+    <h1 class="text-[#00205b] text-xl font-bold animate-pulse">Carregando Painel LATAM...</h1>
+    <p class="text-sm text-gray-500 mt-1">Aguarde um instante</p>
+  </div>
+  <div class="w-14 h-14 border-4 border-t-[#e20074] border-b-[#00205b] border-l-transparent border-r-transparent rounded-full animate-spin"></div>
+</div>
+
+
+ <!-- Header -->
+<header class="bg-[#1a0a7a] text-white px-4 py-2 flex justify-between items-center h-[60px] shadow-md">
+<img src="../../images/logo_header.svg" width="90px" alt="Logo LATAM" class="self-center" />
+  <div class="font-semibold tracking-wide">Painel LATAM - Monitoramento</div>
+  <div class="flex items-center gap-2">
+    <div id="relogio" class="font-bold font-mono">--:--:--</div>
+    <button
+      id="btn-fullscreen"
+      class="text-white bg-[#e20074] hover:bg-[#c70065] px-2 py-1 rounded text-xs transition"
+      title="Tela cheia"
+    >
+      ⛶ Tela cheia
+    </button>
+  </div>
+</header>
+
+  <!-- Conteúdo principal: grid 2x2 -->
+  <main class="flex-1 p-4 grid grid-cols-2 grid-rows-2 gap-4 overflow-hidden bg-gray-50">
+
+    <!-- Card 1: MALHA -->
+    <section id="malha" class="flex flex-col bg-white rounded-xl shadow p-3 overflow-hidden">
+      <h3 class="text-[#e20074] text-base font-semibold mb-2">MALHA (últimos cortes)</h3>
+      <div class="flex-1 overflow-auto rounded-md border border-gray-200">
+        <table id="tabela-malha" class="w-full table-fixed border-collapse text-[10px]">
+          <thead class="sticky top-0 bg-[#00205b] text-white z-10">
+            <tr>
+              <th class="border px-1 py-0.5">Voo</th>
+              <th class="border px-1 py-0.5">Tipo</th>
+              <th class="border px-1 py-0.5">Avião</th>
+              <th class="border px-1 py-0.5">Rota</th>
+              <th class="border px-1 py-0.5">Peso Corte</th>
+              <th class="border px-1 py-0.5">Motivo</th>
+              <th class="border px-1 py-0.5">DEP</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Card 2: RESUMO -->
+    <section id="resumo" class="flex flex-col bg-white rounded-xl shadow p-3 overflow-hidden">
+      <h3 class="text-[#e20074] text-base font-semibold mb-2">RESUMO (check-in e ETD)</h3>
+      <div class="flex-1 overflow-auto rounded-md border border-gray-200">
+        <table id="tabela-resumo" class="w-full table-auto border-collapse text-[10px] whitespace-nowrap">
+          <thead class="sticky top-0 bg-[#00205b] text-white z-10">
+            <tr>
+              <th class="border px-1 py-0.5">STATUS</th>
+              <th class="border px-1 py-0.5">VOO</th>
+              <th class="border px-1 py-0.5">ROTA</th>
+              <th class="border px-1 py-0.5">DATA</th>
+              <th class="border px-1 py-0.5">ATD/ETD</th>
+              <th class="border px-1 py-0.5">LIMITE INFORMAÇÃO</th>
+              <th class="border px-1 py-0.5">INSERIDO AMADEUS</th>
+              <th class="border px-1 py-0.5">CROSSCHECK</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200"></tbody>
+        </table>
+      </div>
+    </section>
+
+
+
+<!-- Card ACOMPANHAMENTO -->
+<section id="acompanhamento" class="flex flex-col bg-white rounded-xl shadow p-3 overflow-auto">
+  <h3 class="text-[#00205b] text-base font-semibold mb-2">ACOMPANHAMENTO</h3>
+  <div class="flex-1 overflow-auto rounded-md border border-gray-200">
+    <table id="tabela-acompanhamento" class="w-full table-auto border-collapse text-[10px] whitespace-nowrap">
+      <thead class="sticky top-0 bg-[#00205b] text-white z-10">
+        <tr>
+          <th class="border px-1 py-0.5">Voo</th>
+          <th class="border px-1 py-0.5">Rota</th>
+          <th class="border px-1 py-0.5">Data</th>
+          <th class="border px-1 py-0.5">DEP</th>
+          <th class="border px-1 py-0.5">Pouso</th>
+          <th class="border px-1 py-0.5">Responsável</th>
+          <th class="border px-1 py-0.5">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200"></tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Card MANIFESTO -->
+<section id="manifesto" class="flex flex-col bg-white rounded-xl shadow p-3 overflow-auto">
+  <h3 class="text-[#00205b] text-base font-semibold mb-2">MANIFESTO</h3>
+  <div class="flex-1 overflow-auto rounded-md border border-gray-200 p-2">
+    <canvas id="graficoManifesto" class="w-full" height="180"></canvas>
+  </div>
+</section>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a0a7a] text-white px-4 py-2 flex justify-between items-center h-[50px] shadow-inner text-sm">
+    <div class="font-semibold">© 2025 LATAM OPS</div>
+    <div class="font-mono">Status: <span id="status" class="text-green-300 font-bold">Online</span></div>
+  </footer>
+
+
+
+
+
+
+
+<!-- Javascript -->
+
+
+
+  <script>
+    const urlAPI = 'https://script.google.com/macros/s/AKfycbwodkPw6JWbz36xUyUDMBqfltSZELlzfxCjSLdr8aAeChHNk0aOKeYQTaBeFZytaL5-/exec';
+    const malhaTbody = document.querySelector('#tabela-malha tbody');
+    const resumoTbody = document.querySelector('#tabela-resumo tbody');
+    const relogio = document.getElementById('relogio');
+    const statusSpan = document.getElementById('status');
+
+    let ultimosPesos = [];
+
+  function tocarSom(url, id, set, volume = 1.0) {
+  if (set.has(id)) return;
+  const audio = new Audio(url);
+  audio.volume = 1.0;
+  audio.play().catch(() => {});
+  set.add(id);
+}
+
+function tocarSomAlerta() {
+  const audio = new Audio('som-alerta.mp3');
+  audio.volume = 1.0; 
+  audio.play().catch(e => console.log('Erro ao tocar som:', e));
+}
+
+
+    function atualizarRelogio() {
+      const agora = new Date();
+      relogio.textContent = agora.toLocaleTimeString('pt-BR');
+    }
+    setInterval(atualizarRelogio, 1000);
+    atualizarRelogio();
+
+    async function buscarDados() {
+  try {
+    statusSpan.textContent = 'Atualizando...';
+    const res = await fetch(urlAPI);
+    const dados = await res.json();
+
+    atualizarMalha(dados.filter(d => d.origem === 'MALHA'));
+    atualizarResumo(dados.filter(d => d.origem === 'RESUMO'));
+    atualizarAcompanhamento(dados.filter(d => d.origem === 'ACOMPANHAMENTO'));
+    atualizarManifesto(dados.filter(d => d.origem === 'Manifesto'));
+    document.getElementById('preloader').style.display = 'none';
+
+
+
+    statusSpan.textContent = 'Online';
+    statusSpan.classList.replace('text-red-400', 'text-green-300');
+  } catch (e) {
+    statusSpan.textContent = 'Erro';
+    statusSpan.classList.replace('text-green-300', 'text-red-400');
+    console.error('Erro ao buscar dados.', e);
+  }
+}
+
+
+
+function atualizarMalha(dadosMalha) {
+  const novos = dadosMalha.filter(item => !ultimosPesos.includes(item.pesodecorte));
+  ultimosPesos = dadosMalha.map(i => i.pesodecorte);
+  malhaTbody.innerHTML = '';
+
+  const agora = new Date();
+
+  dadosMalha.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="border px-1 py-0.5">${item.voo}</td>
+      <td class="border px-1 py-0.5">${item.tipo}</td>
+      <td class="border px-1 py-0.5">${item.aviao}</td>
+      <td class="border px-1 py-0.5">${item.rota}</td>
+      <td class="border px-1 py-0.5">${item.pesodecorte}</td>
+      <td class="border px-1 py-0.5">${item.motivo}</td>
+      <td class="border px-1 py-0.5">${item.dep ?? '-'}</td>
+    `;
+
+    // 🔴 Destacar se passou o horário do DEP
+    if (item.dep && /^\d{2}:\d{2}/.test(item.dep)) {
+  const [hora, minuto] = item.dep.split(':');
+  const depDate = new Date();
+  depDate.setHours(+hora);
+  depDate.setMinutes(+minuto);
+  depDate.setSeconds(0);
+  depDate.setMilliseconds(0);
+
+  if (depDate < agora) {
+    tr.classList.add('bg-red-600', 'text-white');
+  }
+
+const scrollContainer = malhaTbody.closest('.overflow-auto');
+if (scrollContainer) {
+  scrollContainer.scrollTo({
+    top: scrollContainer.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+
+
+}
+
+
+
+
+if (novos.find(n => n.pesodecorte === item.pesodecorte)) {
+  tr.children[4].classList.add('animate-pulse');
+  tr.children[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  tocarSomAlerta();
+}
+    malhaTbody.appendChild(tr);
+  });
+}
+
+const sinosTocados = new Set();
+const voosPartindo = new Set();
+
+function atualizarResumo(dadosResumo) {
+  resumoTbody.innerHTML = '';
+
+  const agora = new Date();
+
+  dadosResumo.forEach(item => {
+    const tr = document.createElement('tr');
+
+    const inserirAmadeusCheckbox = `<input type="checkbox" disabled ${item.inserido_amadeus ? 'checked' : ''}>`;
+    const crosscheckAmadeusCheckbox = `<input type="checkbox" disabled ${item.crosscheck_amadeus ? 'checked' : ''}>`;
+
+    tr.innerHTML = `
+      <td class="border px-1 py-0.5">${item.status ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.voo ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.rota ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.data ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.atd_etd ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.limite_info ?? '-'}</td>
+      <td class="border px-1 py-0.5 text-center">${inserirAmadeusCheckbox}</td>
+      <td class="border px-1 py-0.5 text-center">${crosscheckAmadeusCheckbox}</td>
+    `;
+
+    // Normalizar status
+    const status = (item.status ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    const vooId = item.voo ?? '-';
+
+    // Destacar por crosscheck ou status
+    if (item.crosscheck_amadeus) {
+      tr.classList.add('bg-green-600', 'text-white');
+    } else if (status === 'CONCLUIDO') {
+      tr.classList.add('bg-green-600', 'text-white');
+    } else if (status === 'PENDENTE') {
+      tr.classList.add('bg-orange-500', 'text-white');
+    }
+
+    // 🎯 Verificação do limite_info (5 min) com sino
+    if (item.limite_info) {
+      const limiteDate = new Date(item.limite_info);
+      const diffLimite = limiteDate - agora;
+
+      if (diffLimite <= 5 * 60 * 1000 && !item.crosscheck_amadeus) {
+        if (!sinosTocados.has(vooId)) {
+      tocarSom('i-am-here.mp3', vooId + '_sino', sinosTocados, 1.0);
+          
+        }
+
+        tr.classList.add('bg-red-600', 'text-white');
+        setTimeout(() => {
+          tr.classList.remove('bg-red-600', 'text-white');
+        }, 5 * 60 * 1000); // 5 minutos
+      }
+    }
+
+    // 🎯 Verificação do ATD/ETD (2 min) com som de avião
+    if (item.atd_etd) {
+      const etdDate = new Date(item.atd_etd);
+      const diffETD = etdDate - agora;
+
+      if (diffETD <= 2 * 60 * 1000) {
+        if (!voosPartindo.has(vooId)) {
+          tocarSom('decolando.mp3', vooId + '_etd', voosPartindo);
+        }
+
+        if (status === 'PENDENTE') {
+          tr.classList.remove('bg-orange-500', 'bg-green-600', 'bg-red-600');
+          tr.classList.add('bg-gray-600', 'text-white');
+        }
+      }
+    }
+
+    resumoTbody.appendChild(tr);
+  });
+
+const scrollContainer = resumoTbody.closest('.overflow-auto');
+if (scrollContainer) {
+  scrollContainer.scrollTo({
+    top: scrollContainer.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+
+
+
+}
+
+
+    setInterval(buscarDados, 10000);
+    buscarDados();
+
+// Tela cheia
+document.getElementById('btn-fullscreen').addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch((err) => {
+      alert(`Erro ao ativar tela cheia: ${err.message}`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+});
+
+
+
+
+
+const acompanhamentoTbody = document.querySelector('#tabela-acompanhamento tbody');
+function atualizarAcompanhamento(dadosAcompanhamento) {
+  acompanhamentoTbody.innerHTML = '';
+
+  dadosAcompanhamento.forEach(item => {
+    const tr = document.createElement('tr');
+
+    // Status pra normalizar (minúsculas, sem acentos e espaço)
+    const statusNorm = (item.status ?? '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+
+    tr.innerHTML = `
+      <td class="border px-1 py-0.5">${item.voo ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.rota ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.data ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.dep ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.pouso ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.responsavel ?? '-'}</td>
+      <td class="border px-1 py-0.5">${item.status ?? '-'}</td>
+    `;
+
+    // Aplicar cor pelo status
+    if (statusNorm === 'em andamento') {
+      tr.classList.add('bg-yellow-400', 'text-black');
+    } else if (statusNorm === 'pendente') {
+      tr.classList.add('bg-red-600', 'text-white');
+    } else if (statusNorm === 'finalizado' || statusNorm === 'finalizada' || statusNorm === 'finalizou') {
+      tr.classList.add('bg-green-600', 'text-white');
+    }
+
+    acompanhamentoTbody.appendChild(tr);
+  });
+
+  acompanhamentoTbody.parentElement.scrollTop = acompanhamentoTbody.scrollHeight;
+}
+let graficoManifesto = null;
+
+function atualizarManifesto(dadosManifesto) {
+  const destinos = [];
+  const quantidades = [];
+
+  dadosManifesto.forEach(item => {
+    destinos.push(item.destinos);
+    quantidades.push(Number(item.quantidades));
+  });
+
+  const ctx = document.getElementById('graficoManifesto').getContext('2d');
+
+  if (graficoManifesto) {
+    graficoManifesto.destroy();
+  }
+
+  graficoManifesto = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: destinos,
+      datasets: [{
+        label: 'Volumes por Destino',
+        data: quantidades,
+        backgroundColor: '#00205b',
+        borderColor: '#00205b',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        },
+        datalabels: {
+          color: '#fff',
+          anchor: 'end',
+          align: 'start',
+          offset: -4,
+          font: {
+            weight: 'bold',
+            size: 14
+          },
+          formatter: value => value
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            precision: 0
+          },
+          grid: {
+            color: '#ccc'
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          }
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+}
+
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sobre a LATAM Cargas - Líder em Logística Aérea na América Latina</title>
+    <meta name="description" content="Conheça a história, missão e valores da LATAM Cargas. Somos líderes em transporte aéreo de cargas na América Latina, conectando o mundo com soluções inovadoras.">
+    <meta name="keywords" content="LATAM Cargas, história, missão, valores, logística aérea, América Latina, transporte aéreo">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sobre a LATAM Cargas - Líder em Logística Aérea">
+    <meta property="og:description" content="Conheça nossa história, missão e valores. Líderes em transporte aéreo na América Latina.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://latam-cargas.com/pages/sobre/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://latam-cargas.com/pages/sobre/">
+    
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a0a7a 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 79.5px;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-content {
+            padding: 4rem 0;
+        }
+        
+        .about-section {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            color: black;
+        }
+        
+        .about-section h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+            transition: var(--transition);
+            color: rgb(0, 0, 0);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: calc(50% + 2rem);
+        }
+        
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: calc(50% + 2rem);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .stats-section {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label{
+            color: black;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-section {
+                margin: 2rem 1rem;
+                padding: 2rem 1rem;
+            }
+            
+            .timeline::before {
+                left: 1rem;
+            }
+            
+            .timeline-item {
+                padding-left: 3rem;
+                padding-right: 1rem;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                padding-left: 3rem;
+                padding-right: 1rem;
+                text-align: left;
+            }
+            
+            .timeline-item::before {
+                left: 1rem;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../images/logo_header.svg" alt="LATAM Cargas - Logística Aérea" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav-list">
+                    <li><a href="../../index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html" class="nav-link" aria-current="page">Sobre</a></li>
+                    <li><a href="../servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li><a href="../contato/index.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="bar-content" aria-hidden="true"></div>
+    </header>
+
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <h1>Sobre a LATAM Cargas</h1>
+                <p>Conectando a América Latina ao mundo através de soluções inovadoras em logística aérea</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+                
+                <article class="about-section">
+                    <h2>Nossa História</h2>
+                    <p>A LATAM Cargas nasceu da visão de conectar a América Latina ao mundo através de soluções inovadoras em transporte aéreo de cargas. Com décadas de experiência no mercado, nos consolidamos como uma das principais empresas de logística aérea da região.</p>
+                    
+                    <p>Nossa trajetória é marcada por constante inovação, investimento em tecnologia e compromisso com a excelência operacional. Desde o início, focamos em oferecer soluções personalizadas que atendam às necessidades específicas de cada cliente.</p>
+                </article>
+
+                <article class="about-section">
+                    <h2>Missão, Visão e Valores</h2>
+                    
+                    <div style="margin: 2rem 0;">
+                        <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Missão</h3>
+                        <p>Conectar pessoas, empresas e culturas através de soluções inovadoras em transporte aéreo de cargas, contribuindo para o desenvolvimento econômico e social da América Latina.</p>
+                    </div>
+                    
+                    <div style="margin: 2rem 0;">
+                        <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Visão</h3>
+                        <p>Ser a empresa de logística aérea mais confiável e inovadora da América Latina, reconhecida pela excelência em serviços e compromisso com a sustentabilidade.</p>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <span class="value-icon">⚖️</span>
+                            <h4>Justiça</h4>
+                            <p>Proporcionando o melhor tratamento e condições justas para todos</p>
+                        </div>
+                        <div class="value-card">
+                            <span class="value-icon">🤝</span>
+                            <h4>Empatia</h4>
+                            <p>Trazendo diversidade e compreensão em todas as nossas relações</p>
+                        </div>
+                        <div class="value-card">
+                            <span class="value-icon">🔍</span>
+                            <h4>Transparência</h4>
+                            <p>Garantindo 100% de confiabilidade em todos os nossos processos</p>
+                        </div>
+                        <div class="value-card">
+                            <span class="value-icon">⚡</span>
+                            <h4>Simplicidade</h4>
+                            <p>Proporcionando agilidade e facilidade em nossos serviços</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="about-section">
+                    <h2>Nossa Trajetória</h2>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>2025 - Março</h4>
+                                <p>Novo setor de analise e inovação.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>2025 - Setembro</h4>
+                                <p>Lançamento do portal digital integrado para gestão de cargas - GRU</p>
+                            </div>
+                        </div>
+                       
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>2025 - Setembro</h4>
+                                <p>Implementação de sistemas de análise de dados em tempo real</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>2025 - Novembro</h4>
+                                <p>Implementação de softwares de rota.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>2025 - Dezembro</h4>
+                                <p>Novo sistema integrado de planejamento e análises</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>LATAM Cargas em Números</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">DFR</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Toneladas Transportadas/Ano</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.8%</div>
+                        <div class="stat-label">Taxa de assertividade</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Suporte Disponível</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Clientes Satisfeitos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../../images/logo_header.svg" alt="LATAM Cargas" class="footer-logo">
+                    <p class="footer-text">Conectando o mundo através de soluções inovadoras em logística aérea.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Início</a></li>
+                        <li><a href="index.html">Sobre</a></li>
+                        <li><a href="../servicos/index.html">Serviços</a></li>
+                        <li><a href="../contato/index.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="../contato/index.html">Suporte Técnico</a></li>
+                        <li><a href="../contato/index.html">Atendimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LATAM Cargas OPS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
+
