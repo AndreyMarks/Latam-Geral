@@ -476,8 +476,8 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--text-dark);
-  color: var(--text-white);
+  background: #1e293b;
+  color: #ffffff;
   padding: 3rem 0 1rem;
 }
 
@@ -494,7 +494,7 @@ body {
 }
 
 .footer-text {
-  color: #cbd5e1;
+  color: #e2e8f0;
   line-height: 1.6;
 }
 
@@ -502,7 +502,7 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--text-white);
+  color: #ffffff;
 }
 
 .footer-links {
@@ -514,7 +514,7 @@ body {
 }
 
 .footer-links a {
-  color: #cbd5e1;
+  color: #e2e8f0;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -524,10 +524,10 @@ body {
 }
 
 .footer-bottom {
-  border-top: 1px solid #374151;
+  border-top: 1px solid #334155;
   padding-top: 1rem;
   text-align: center;
-  color: #9ca3af;
+  color: #cbd5e1;
 }
 
 /* Animations */

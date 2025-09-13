@@ -28,7 +28,7 @@
     <style>
         .contact-hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, #1a0a7a 100%);
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 8rem 0 4rem;
             margin-top: 79.5px;
             text-align: center;
@@ -62,7 +62,7 @@
         }
         
         .contact-info {
-            background: var(--bg-light);
+            background: white;
             padding: 3rem;
             border-radius: 12px;
         }
@@ -75,7 +75,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--text-dark);
+            color: black;
         }
         
         .form-group input,
@@ -126,7 +126,7 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: white;
+            background: #1e293b;
             border-radius: 8px;
             box-shadow: var(--shadow-sm);
         }
@@ -139,7 +139,7 @@
         }
         
         .contact-details h4 {
-            color: var(--primary-color);
+            color: var(--text-light);
             margin-bottom: 0.5rem;
         }
         
@@ -258,7 +258,7 @@
         <section class="contact-hero">
             <div class="container">
                 <h1>Fale Conosco</h1>
-                <p>Estamos aqui para ajudar você com todas as suas necessidades logísticas</p>
+                <p>Estamos aqui para ajudar você com todas as suas necessidades.</p>
             </div>
         </section>
 
@@ -273,29 +273,25 @@
                         <form id="contactForm" action="#" method="POST">
                             <div class="form-group">
                                 <label for="name">Nome Completo *</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" required placeholder="Nome completo">
                             </div>
                             
                             <div class="form-group">
                                 <label for="email">E-mail *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required placeholder="E-mail">
                             </div>
                             
                             <div class="form-group">
                                 <label for="phone">Telefone</label>
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" placeholder="Telefone">
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="company">Empresa</label>
-                                <input type="text" id="company" name="company">
-                            </div>
+                        
                             
                             <div class="form-group">
                                 <label for="subject">Assunto *</label>
                                 <select id="subject" name="subject" required>
                                     <option value="">Selecione um assunto</option>
-                                    <option value="cotacao">Solicitação de Cotação</option>
+                                    <option value="cotacao">Solicitação de noticia interna</option>
                                     <option value="suporte">Suporte Técnico</option>
                                     <option value="reclamacao">Reclamação</option>
                                     <option value="sugestao">Sugestão</option>
@@ -321,8 +317,8 @@
                             <div class="contact-icon">📞</div>
                             <div class="contact-details">
                                 <h4>Suporte 24/7</h4>
-                                <p>+55 (11) 4000-1234<br>
-                                   +55 (11) 4000-5678</p>
+                                <p>+55 (11) 1234-1234<br>
+                                   +55 (11) 0000-0000</p>
                             </div>
                         </div>
                         
@@ -339,8 +335,7 @@
                             <div class="contact-icon">📍</div>
                             <div class="contact-details">
                                 <h4>Endereço</h4>
-                                <p>Av. das Nações, 1234<br>
-                                   São Paulo - SP, 01234-567</p>
+                                <p>Rod. Hélio Smidt, s/n - Aeroporto, Guarulhos - SP, 07190-100</p>
                             </div>
                         </div>
                         
@@ -362,53 +357,33 @@
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            Como posso rastrear minha carga?
+                            Como reduzir atrasos e cancelamentos sem comprometer a segurança?
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-answer">
-                            Você pode rastrear sua carga através do nosso portal online ou entrando em contato com nossa central de atendimento. Basta informar o número do conhecimento aéreo (AWB).
+Solução deve ser descrita aqq                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quais indicadores-chave (KPIs) acompanhar em tempo real para tomar decisões rápidas?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Solução deve ser descrita aqq
                         </div>
                     </div>
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            Qual o prazo de entrega para cargas nacionais?
+                            Como otimizar a alocação de aeronaves e tripulações diante de imprevistos (manutenção, clima, greves)?
                             <span class="faq-toggle">▼</span>
                         </div>
                         <div class="faq-answer">
-                            O prazo varia conforme o destino, mas geralmente é de 1 a 3 dias úteis para cargas nacionais. Para prazos específicos, consulte nossa equipe comercial.
-                        </div>
+Solução deve ser descrita aqq                        </div>
                     </div>
                     
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Como solicitar uma cotação?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Você pode solicitar uma cotação através do formulário acima, por telefone ou e-mail. Informe origem, destino, peso, dimensões e tipo de carga para um orçamento preciso.
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Quais tipos de carga vocês transportam?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Transportamos diversos tipos de carga, incluindo produtos industriais, perecíveis, farmacêuticos, eletrônicos e cargas especiais. Consulte-nos para cargas específicas.
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Vocês oferecem seguro para as cargas?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Sim, oferecemos cobertura de seguro completa para todas as cargas transportadas. Os detalhes da cobertura são informados no momento da contratação.
-                        </div>
-                    </div>
+                   
                 </div>
 
             </div>
@@ -437,7 +412,7 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Contato</h4>
                     <ul class="footer-links">
-                        <li><a href="tel:+5511400012345">+55 (11) 4000-1234</a></li>
+                        <li><a href="tel:+5511400012345">+55 (11) 1234-1234</a></li>
                         <li><a href="mailto:contato@latamcargas.com">contato@latamcargas.com</a></li>
                     </ul>
                 </div>
