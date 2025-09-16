@@ -702,6 +702,12 @@ body {
     width: 100% !important;
     height: 400px !important;
   }
+
+.internal-notifications {
+  padding-top: 10%;
+  margin-top: 20%;
+}
+
 }
 
 .frame  {
@@ -766,22 +772,33 @@ body {
     }
 
     /* Notícia destaque */
-    .noticia-destaque {
-      display: block;
-      background: #fff;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      width: 70%;
-      height: auto;
-    }
-    .noticia-destaque .imagem {
-      background: #ccc;
-      max-height: auto;
-    }
-    .noticia-destaque .texto {
-      padding: 15px;
-    }
+.noticia-destaque {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.63);
+  width: 100%;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.noticia-destaque .imagem {
+  flex: 2; /* ocupa 2/3 do espaço */
+  overflow: hidden;
+}
+
+.noticia-destaque .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta e centraliza sem distorcer */
+}
+
+.noticia-destaque .texto {
+  flex: 1; /* ocupa 1/3 do espaço */
+  padding: 15px;
+}
+
     .noticia-destaque h3 {
       margin: 5px 0;
       font-size: 22px;
@@ -797,7 +814,7 @@ body {
       background: #fff;
       padding: 15px;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.63);
     }
     .sidebar h4 {
       margin-bottom: 10px;
@@ -815,11 +832,20 @@ body {
       margin-bottom: 15px;
     }
     .sidebar .thumb {
-      width: 50px;
-      height: 50px;
-      background: #ccc;
-      border-radius: 4px;
-    }
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        overflow: hidden; /* corta o excesso da imagem */
+        flex-shrink: 0;   /* garante que não diminui no flex */
+      }
+
+    .sidebar .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* faz a imagem preencher sem distorcer */
+        display: block;
+      }
+
     .sidebar span {
       font-size: 12px;
       color: #777;
@@ -842,11 +868,12 @@ body {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+
     }
     .card {
       background: #fff;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.63);
       overflow: hidden;
     }
     .card .imagem {
@@ -918,6 +945,12 @@ body {
   padding-top: 8rem;
 }
 
+.internal-notifications {
+  padding-top: 5%;
+  margin-top: 20%;
+}
+
+
 }
 
 
@@ -963,6 +996,12 @@ a:focus {
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+
+    .noticia-destaque {
+      max-width: auto;
+    }
+
 }
 
 /* Melhorias para telas muito pequenas */
@@ -1026,6 +1065,8 @@ a:focus {
     padding-top: 4rem;
   }
 }
+
+
 
 /* Melhorias de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
