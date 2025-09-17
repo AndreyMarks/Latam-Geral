@@ -352,7 +352,7 @@ body {
 .services h3,
 .services h4,
 .services p {
-  color: #222; 
+  color: var(--text-dark);
 }
 
 .section-header-notices h2{
@@ -1108,7 +1108,6 @@ a:focus {
     --border-color: #334155;
   }
 }
-
 /* Melhorias de performance */
 .slide-img {
   will-change: transform;
