@@ -346,14 +346,10 @@ body {
   background: #e7e7e7;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-   color: #222;
+   color: #ffffff;
 }
 
-.services h3,
-.services h4,
-.services p {
-  color: var(--text-dark);
-}
+
 
 .section-header-notices h2{
   text-align: center;
@@ -363,6 +359,19 @@ body {
   text-align: center;
   margin-bottom: 4rem;
 }
+
+.s-title {
+  color: #000;
+
+}
+.s-subtitle {
+  color: #000000;
+}
+
+.categoria {
+  color: #000;
+}
+
 
 .section-title {
   font-size: 2.5rem;
