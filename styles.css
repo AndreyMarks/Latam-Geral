@@ -14,7 +14,17 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   --border-radius: 8px;
   --transition: all 0.3s ease;
-  color-scheme: light dark;
+
+  --title-color: #111111;
+
+}
+
+.body.dark-mode {
+    --title-color: #ffffff
+}
+
+.section-title {
+  color: var(--title-color);
 }
 
 * {
