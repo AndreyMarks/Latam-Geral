@@ -48,6 +48,11 @@ body {
   transition: var(--transition);
 }
 
+ a {
+      text-decoration: none;
+    }
+
+
 .header .container {
   display: flex;
   align-items: center;
