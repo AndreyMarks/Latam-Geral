@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #9b9b9b86 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cadastro-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    max-width: 1400px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 700px;
+}
+
+.cadastro-left {
+    background: linear-gradient(135deg, #000000 0%, #0052df 100%);
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cadastro-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../../images/notices/background.png') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.cadastro-brand {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.cadastro-brand h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cadastro-brand p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.features-list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-text h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.feature-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.cadastro-right {
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.cadastro-form-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cadastro-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.cadastro-header p {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 45px 14px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    padding-right: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-icon {
+    position: absolute;
+    right: 14px;
+    top: 65%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.checkbox-group {
+    margin: 8px 0;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    display: flex;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    margin-right: 12px;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.cadastro-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.cadastro-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.cadastro-btn:active {
+    transform: translateY(0);
+}
+
+.btn-loading {
+    display: none;
+}
+
+.cadastro-footer {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.cadastro-footer p {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.cadastro-footer a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.cadastro-footer a:hover {
+    color: #2563eb;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .cadastro-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    
+    .cadastro-left {
+        padding: 40px 30px;
+    }
+    
+    .features-list {
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .feature-item {
+        min-width: 250px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .cadastro-left {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    .cadastro-brand h1 {
+        font-size: 2rem;
+    }
+    
+    .features-list {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .feature-item {
+        min-width: auto;
+        padding: 16px;
+    }
+    
+    .cadastro-right {
+        padding: 30px 20px;
+    }
+    
+    .cadastro-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cadastro-left {
+        padding: 20px 15px;
+    }
+    
+    .cadastro-right {
+        padding: 20px 15px;
+    }
+    
+    .cadastro-brand h1 {
+        font-size: 1.75rem;
+    }
+    
+    .cadastro-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 40px 12px 12px;
+    }
+    
+    .cadastro-btn {
+        padding: 14px;
+    }
+    
+    .feature-item {
+        padding: 12px;
+    }
+}
+

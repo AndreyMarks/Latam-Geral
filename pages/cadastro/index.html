@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Portal LATAM Cargas</title>
+    <link rel="icon" type="image/png" href="../../images/Cargo_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="cadastro-container">
+        <div class="cadastro-left">
+            <div class="cadastro-brand">
+                <img src="../../images/logo_header.svg" alt="LATAM Cargas" class="brand-logo">
+                <h1>Junte-se à Equipe</h1>
+                <p>Solicite seu acesso ao portal interno da LATAM Cargas</p>
+            </div>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">✈️</span>
+                    <div class="feature-text">
+                        <h4>Gestão Operacional</h4>
+                        <p>Acesso a ferramentas de planejamento e controle</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <div class="feature-text">
+                        <h4>Dashboards em Tempo Real</h4>
+                        <p>Acompanhe métricas e indicadores de performance da equipe</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔒</span>
+                    <div class="feature-text">
+                        <h4>Ambiente Seguro</h4>
+                        <p>Proteção de dados e acesso controlado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cadastro-right">
+            <div class="cadastro-form-container">
+                <div class="cadastro-header">
+                    <h2>Solicitar Acesso</h2>
+                    <p>Preencha os dados para solicitar seu cadastro no portal</p>
+                </div>
+                
+                <form class="cadastro-form" id="cadastroForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                            <span class="form-icon">👤</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sobrenome">Sobrenome</label>
+                            <input type="text" id="sobrenome" name="sobrenome" required placeholder="Seu sobrenome">
+                            <span class="form-icon">👤</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail Corporativo</label>
+                        <input type="email" id="email" name="email" required placeholder="seu.email@latam.com">
+                        <span class="form-icon">📧</span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="setor">Setor</label>
+                            <select id="setor" name="setor" required>
+                                <option value="">Selecione seu setor</option>
+                                <option value="operacoes">Operações</option>
+                                <option value="planejamento">Planejamento</option>
+                                <option value="qualidade">Qualidade</option>
+                                <option value="seguranca">Segurança</option>
+                                <option value="manutencao">Manutenção</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="ti">Tecnologia da Informação</option>         
+                                <option value="melhoria">Melhoria</option>
+                            </select>
+                            <span class="form-icon">🏢</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cargo">Cargo</label>
+                            <input type="text" id="cargo" name="cargo" required placeholder="Seu cargo atual">
+                            <span class="form-icon">💼</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="matricula">Matrícula</label>
+                            <input type="text" id="matricula" name="matricula" required placeholder="Número da matrícula">
+                            <span class="form-icon">🆔</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+                            <span class="form-icon">📱</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gestor">E-mail do Gestor Direto</label>
+                        <input type="email" id="gestor" name="gestor" required placeholder="gestor@latam.com">
+                        <span class="form-icon">👨‍💼</span>
+                    </div>
+
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="termos" required>
+                            <span class="checkmark"></span>
+                            Li e aceito os <a href="#" class="link">Termos de Uso</a> e <a href="#" class="link">Política de Privacidade</a>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="confidencialidade" required>
+                            <span class="checkmark"></span>
+                            Concordo com o <a href="#" class="link">Termo de Confidencialidade</a> da LATAM
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="cadastro-btn">
+                        <span class="btn-text">Solicitar Acesso</span>
+                        <span class="btn-loading" style="display: none;">Enviando...</span>
+                    </button>
+                </form>
+                
+                <div class="cadastro-footer">
+                    <p>Já tem acesso? <a href="../login/index.html">Fazer login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <span class="notification-icon">✅</span>
+        <span class="notification-text">Solicitação enviada com sucesso!</span>
+    </div>
+    
+    <script src="cadastro.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Portal LATAM Cargas</title>
+    <link rel="icon" type="image/png" href="../../images/Cargo_Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <div class="login-brand">
+                <img src="../../images/logo_header.svg" alt="LATAM Cargas" class="brand-logo">
+                <h1>Portal Interno - Guarulhos</h1>
+                <p>Acesse suas ferramentas e informações operacionais</p>
+            </div>
+            <div class="login-illustration">
+                <img src="../../images/notices/aviao.png" alt="Avião LATAM" class="illustration-img">
+            </div>
+        </div>
+        
+        <div class="login-right">
+            <div class="login-form-container">
+                <div class="login-header">
+                    <h2>Bem-vindo de volta!</h2>
+                    <p>Entre com suas credenciais para acessar o portal</p>
+                </div>
+                
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">E-mail corporativo</label>
+                        <input type="email" id="email" name="email" required placeholder="seu.email@latam.com">
+                        <span class="form-icon">📧</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                        <button type="button" class="password-toggle" id="passwordToggle">👁️</button>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Lembrar de mim
+                        </label>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">
+                        <span class="btn-text">Entrar</span>
+                        <span class="btn-loading" style="display: none;">Entrando...</span>
+                    </button>
+                    
+                    <div class="form-divider">
+                        <span>ou</span>
+                    </div>
+                    
+                    <button type="button" class="sso-btn">
+                        <span class="sso-icon">🏢</span>
+                        Entrar com SSO Corporativo
+                    </button>
+                </form>
+                
+                <div class="login-footer">
+                    <p>Não tem acesso? <a href="../cadastro/index.html">Solicitar cadastro</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <span class="notification-icon">✅</span>
+        <span class="notification-text">Login realizado com sucesso!</span>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>
+
