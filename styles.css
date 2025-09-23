@@ -953,7 +953,7 @@ body {
 }
 
 .noticia-destaque .imagem {
-  flex: 2; /* ocupa 2/3 do espaço */
+  flex: 5; /* ocupa 2/3 do espaço */
   overflow: hidden;
 }
 

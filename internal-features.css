@@ -1,6 +1,10 @@
-/* Funcionalidades específicas para funcionários internos da LATAM Cargas */
+/* ================================
+   FUNCIONALIDADES INTERNAS LATAM CARGAS
+================================ */
 
-/* Seção de acesso rápido para funcionários */
+/* -------------------------------
+   SEÇÃO DE ACESSO RÁPIDO
+-------------------------------- */
 .quick-access {
   background: #e7e7e7;
   padding: 3rem 0;
@@ -49,7 +53,9 @@
   font-size: 0.9rem;
 }
 
-/* Notificações internas */
+/* -------------------------------
+   NOTIFICAÇÕES INTERNAS
+-------------------------------- */
 .internal-notifications {
   background: linear-gradient(135deg, #e20074 0%, #120069 100%);
   color: white;
@@ -57,7 +63,6 @@
   overflow: hidden;
   padding: 0.5rem 0;
 }
-
 
 .notification-content {
   display: flex;
@@ -80,7 +85,9 @@
   100% { transform: translateX(-100%); }
 }
 
-/* Seção de status operacional */
+/* -------------------------------
+   STATUS OPERACIONAL
+-------------------------------- */
 .operational-status {
   background: #374151;
   padding: 2rem;
@@ -120,7 +127,9 @@
   font-weight: 500;
 }
 
-/* Seção de turno atual */
+/* -------------------------------
+   TURNO ATUAL
+-------------------------------- */
 .current-shift {
   background: rgba(18, 0, 105, 0.1);
   border: 1px solid rgba(18, 0, 105, 0.3);
@@ -137,22 +146,13 @@
   gap: 1rem;
 }
 
-.shift-current {
-  color: #ffffff;
-  font-weight: 600;
-}
+.shift-current { color: #ffffff; font-weight: 600; }
+.shift-time { color: #a0aec0; font-size: 0.9rem; }
+.shift-supervisor { color: #e20074; font-weight: 500; }
 
-.shift-time {
-  color: #a0aec0;
-  font-size: 0.9rem;
-}
-
-.shift-supervisor {
-  color: #e20074;
-  font-weight: 500;
-}
-
-/* Melhorias para cards de funcionários */
+/* -------------------------------
+   FUNCIONÁRIOS EM DESTAQUE (CARDS PRINCIPAIS)
+-------------------------------- */
 .employee-card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
@@ -168,35 +168,35 @@
   box-shadow: var(--shadow-lg);
 }
 
-.employee-info {
+.employee-card .employee-info {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.employee-name {
+.employee-card .employee-name {
   color: var(--primary-color);
   font-weight: 600;
   font-size: 1.2rem;
 }
 
-.employee-sector {
+.employee-card .employee-sector {
   color: var(--text-light);
   font-size: 0.9rem;
 }
 
-.employee-rating {
-  color: #FFD700; /* Gold color for stars */
+.employee-card .employee-rating {
+  color: #FFD700;
   font-size: 1.1rem;
 }
 
-.employee-subtitle {
+.employee-card .employee-subtitle {
   color: var(--text-dark);
   font-size: 0.85rem;
   margin-top: 0.5rem;
 }
 
-.employee-avatar {
+.employee-card .employee-avatar {
   position: relative;
   width: 100px;
   height: 100px;
@@ -207,16 +207,16 @@
   box-shadow: var(--shadow-md);
 }
 
-.avatar-img {
+.employee-card .avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.employee-badge {
+.employee-card .employee-badge {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   background: var(--secondary-color);
   border-radius: 50%;
   padding: 0.4rem;
@@ -226,7 +226,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.badge-icon {
+.employee-card .badge-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,6 +234,7 @@
   height: 1.2rem;
 }
 
+/* GRID DE FUNCIONÁRIOS */
 .employees-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -241,29 +242,16 @@
   margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-  .employees-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.employee-details h4 {
-  color: var(--text-dark);
-  margin-bottom: 0.25rem;
-}
-
-.employee-role {
-  color: var(--text-light);
-  font-size: 0.9rem;
-}
-
-.employee-info {
+/* -------------------------------
+   FUNCIONÁRIOS - LISTA/DETALHES MENORES
+-------------------------------- */
+.employee-details {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.employee-avatar {
+.employee-details .employee-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -280,12 +268,14 @@
   margin-bottom: 0.25rem;
 }
 
-.employee-role {
+.employee-details .employee-role {
   color: #a0aec0;
   font-size: 0.9rem;
 }
 
-/* Seção de metas e KPIs */
+/* -------------------------------
+   METAS E KPIs
+-------------------------------- */
 .kpi-section {
   background: #2d3748;
   padding: 2rem;
@@ -315,69 +305,33 @@
   margin-bottom: 0.5rem;
 }
 
-.kpi-label {
-  color: #a0aec0;
-  font-size: 0.9rem;
-}
-
-.kpi-trend {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
+.kpi-label { color: #a0aec0; font-size: 0.9rem; }
+.kpi-trend { font-size: 0.8rem; margin-top: 0.5rem; }
 
 .trend-up { color: #10b981; }
 .trend-down { color: #ef4444; }
 
-/* Responsividade para funcionalidades internas */
+/* -------------------------------
+   RESPONSIVIDADE
+-------------------------------- */
 @media (max-width: 768px) {
-  .quick-access-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .status-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .kpi-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .shift-info {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .notification-content {
-    font-size: 0.9rem;
-  }
-
-.internal-notifications{
-  padding-top: 5%;
+  .quick-access-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .status-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .shift-info { flex-direction: column; text-align: center; }
+  .notification-content { font-size: 0.9rem; }
+  .internal-notifications { padding-top: 5%; }
 }
 
+/* -------------------------------
+   ACESSIBILIDADE
+-------------------------------- */
+.accessibility-high-contrast { filter: contrast(1.2); }
+.accessibility-large-text { font-size: 1.1em; }
 
-}
-
-/* Melhorias de acessibilidade para funcionários */
-.accessibility-high-contrast {
-  filter: contrast(1.2);
-}
-
-.accessibility-large-text {
-  font-size: 1.1em;
-}
-
-/* Indicadores de prioridade */
-.priority-high {
-  border-left: 4px solid #ef4444;
-}
-
-.priority-medium {
-  border-left: 4px solid #f59e0b;
-}
-
-.priority-low {
-  border-left: 4px solid #10b981;
-}
-
+/* -------------------------------
+   PRIORIDADE
+-------------------------------- */
+.priority-high { border-left: 4px solid #ef4444; }
+.priority-medium { border-left: 4px solid #f59e0b; }
+.priority-low { border-left: 4px solid #10b981; }
