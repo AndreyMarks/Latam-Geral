@@ -59,29 +59,42 @@
 .internal-notifications {
   background: linear-gradient(135deg, #e20074 0%, #120069 100%);
   color: white;
-  position: relative;
+  position: fixed;
+  top: 79.5px;
+  left: 0;
+  right: 0;
+  z-index: 999;
   overflow: hidden;
-  padding: 0.5rem 0;
+  padding: 8px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .notification-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  animation: slideNotification 20s linear infinite;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  white-space: nowrap;
+  animation: slideNotification 30s linear infinite;
+  padding-left: 100%;
 }
 
 .notification-icon {
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .notification-text {
   font-weight: 500;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 @keyframes slideNotification {
-  0% { transform: translateX(100%); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 

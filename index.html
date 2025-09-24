@@ -73,10 +73,27 @@
             <nav class="nav" role="navigation" aria-label="Menu principal">
                 
                 <ul class="nav-list">
-                    <li><a href="#analises" class="nav-link">Dashboard</a></li>
-                    <li><a href="./pages/painel-latam/indexpainel.html" class="nav-link">Planejamento</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Planejamento de Voo - ECC</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./pages/painel-latam/indexpainel.html" class="dropdown-link">Display - ECC</a></li>
+                            <li><a href="#" class="dropdown-link">Planilhas</a></li>
+                            <li><a href="./pages/operacional-pista/index.html" class="dropdown-link">Operacional Pista</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Atendimento</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">Display - ATT</a></li>
+                            <li><a href="#" class="dropdown-link">Planilhas</a></li>
+                        </ul>
+                    </li>
+
+
                     <li><a href="./pages/servicos/index.html" class="nav-link">Serviços</a></li>
                     <li><a href="./pages/contato/index.html" class="nav-link">Suporte</a></li>
+
                 </ul>
             </nav>
 
@@ -91,8 +108,6 @@
                 <span></span>
             </button>
         </div>
-        <div class="bar-content" aria-hidden="true"></div>
-    </header>
 
     <!-- Notificações Internas -->
     <div class="internal-notifications">
@@ -105,6 +120,10 @@
             <span class="notification-text">Meta mensal de eficiência: 87% alcançado - Parabéns equipe!</span>
         </div>
     </div>
+
+
+        <div class="bar-content" aria-hidden="true"></div>
+    </header>
 
 
 
@@ -405,135 +424,78 @@
 
 
 
-<div>
 
 
 
+    <!-- Seção de Notícias Minimalista -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="s-title">Últimas Atualizações</h2>
+                <p class="s-subtitle">Mantenha-se informado sobre as novidades da LATAM Cargas</p>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card featured">
+                                    <a href="pages/extensao/extension.html">
 
+                    <div class="news-image">
+                        <img src="images/notices/aviao.png" alt="Extensão">
+                        <div class="news-category">Operações</div>
+                    </div>
+                       
 
-
-
-
-  <section class="noticias">
-
-    <header class="section-header-notices">
-      <h2>Notícias</h2>
-    </header>
-
-
-            <div class="container">
-    
-                    <div class="conteudo-principal">
-                    
-                    <!-- Notícia destaque -->
-                     <a href="pages/extensao/extension.html">
-                    <div class="noticia-destaque">
-                        <div class="imagem" > 
-                            <img src="images/modos_de_uso.png">
-
-                        </div>
-                        <div class="texto">
-                        <p class="categoria">Operações</p>
-                        <h3>Flight Calculator - Nova ferramenta para auxiliar em nossa operação, confira!</h3>
-                        <p class="autor">De Andrey Marques</p>
+                    <div class="news-content">
+                        <h3 class="news-title">Nova extensão para controle de guias</h3>
+                        <p class="news-excerpt">Sistema criado afim de promover maior agilidade e reduções de retrabalho no setor do ECC e IRR'S!</p>
+                        <div class="news-meta">
+                            <span class="news-author">Andrey Marques</span>
+                            <span class="news-date">25 Set 2025</span>
                         </div>
                     </div>
-                    </a>
-
-      <!-- Barra lateral -->
-               <aside class="sidebar">
-  <h4>Últimas populares</h4>
-  <ul>
-    <li>
-      <div class="thumb"><img src="images/Cargo_Logo.png" alt="thumb"></div>
-      <div class="info">
-        <p class="s-title">Cuidado na operação!</p>
-        <span>15 de Setembro de 2025</span>
-      </div>
-    </li>
-
-    <li>
-      <div class="thumb"><img src="images/Cargo_Logo.png" alt="thumb"></div>
-      <div class="info">
-        <p class="s-title">Artigos perigosos</p>
-        <span>07 Agosto 2022</span>
-      </div>
-    </li>
-
-    <li>
-      <div class="thumb"><img src="images/Cargo_Logo.png" alt="thumb"></div>
-      <div class="info">
-        <p class="s-title">Gestão de ponto</p>
-        <span>11 Agosto 2022</span>
-      </div>
-    </li>
-
-    <li>
-      <div class="thumb"><img src="images/Cargo_Logo.png" alt="thumb"></div>
-      <div class="info">
-        <p class="s-title">Como Liderar sua equipe!</p>
-        <span>22 Agosto 2022</span>
-      </div>
-    </li>
-
-  <li>
-      <div class="thumb"><img src="images/Cargo_Logo.png" alt="thumb"></div>
-      <div class="info">
-        <p class="s-title">Visão ampliada!</p>
-        <span>23 Agosto 2022</span>
-      </div>
-    </li>
+                                 </a>
+                </article>
 
 
-  </ul>
-</aside>
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-category">Melhoria</div>
+                        <h3 class="news-title">Nova gestão de cursos implementada</h3>
+                        <p class="news-excerpt">Sistema atualizado para melhor controle e acompanhamento dos treinamentos internos.</p>
+                        <div class="news-meta">
+                            <span class="news-author">Hiago Oliveira</span>
+                            <span class="news-date">24 Set 2025</span>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-category">Treinamento</div>
+                        <h3 class="news-title">Capacitação em Logística Aérea</h3>
+                        <p class="news-excerpt">Novo curso disponível para aprimoramento das competências técnicas.</p>
+                        <div class="news-meta">
+                            <span class="news-date">10 Set 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-category">Tecnologia</div>
+                        <h3 class="news-title">Sistema de Gestão Atualizado</h3>
+                        <p class="news-excerpt">Melhorias no sistema para maior eficiência no controle de cargas.</p>
+                        <div class="news-meta">
+                            <span class="news-date">08 Set 2025</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-
-    <!-- Seção "Fique de olho!" -->
-    <section class="fique-de-olho">
-      <h4>Fique de olho!</h4>
-      <div class="cards">
-        <article class="card">
-          <div class="imagem"><img src="images/notices/aviao.png"></div>
-          <div class="conteudo">
-            <p class="categoria">Operações</p>
-            <h5>Nova gestão de cursos!</h5>
-            <p class="s-title">Por Hiago Oliveira</p>
-            <span>15 Setembro 2025</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="imagem"><img src="images/notices/aviao.png"></div>
-          <div class="conteudo">
-            <p class="categoria">Segurança</p>
-            <h5>Novos Protocolos de Segurança Implementados</h5>
-            <p class="s-title">Por Departamento de Segurança</p>
-            <span>12 Setembro 2025</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="imagem"><img src="images/notices/aviao.png"></div>
-          <div class="conteudo">
-            <p class="categoria">Treinamento</p>
-            <h5>Curso de Capacitação em Logística Aérea</h5>
-            <p class="s-title">Por RH - Desenvolvimento</p>
-            <span>10 Setembro 2025</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="imagem"><img src="images/notices/aviao.png"></div>
-          <div class="conteudo">
-            <p class="categoria">Tecnologia</p>
-            <h5>Atualização do Sistema de Gestão de Cargas</h5>
-            <p class="s-title">Por TI - Sistemas</p>
-            <span>08 Setembro 2025</span>
-          </div>
-        </article>
-      </div>
+            
+            <div class="news-actions">
+                <a href="#" class="news-link">Ver todas as notícias</a>
+            </div>
+        </div>
     </section>
 
 

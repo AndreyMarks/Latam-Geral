@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Operacional de Pista - LATAM Cargas</title>
+    <link rel="icon" type="image/png" href="../../images/Cargo_Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="operacional.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../images/logo_header.svg" alt="LATAM Cargas - Logística Aérea" class="logo-img">
+                </a>
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">ECC - PLANEJAMENTO</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../painel-latam/indexpainel.html" class="dropdown-link">DISPLAY</a></li>
+                            <li><a href="#" class="dropdown-link">Planilhas</a></li>
+                            <li><a href="index.html" class="dropdown-link active">Operacional Pista</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Atendimento</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">DISPLAY</a></li>
+                            <li><a href="#" class="dropdown-link">Planilhas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li><a href="../contato/index.html" class="nav-link">Suporte</a></li>
+                </ul>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="../login/index.html" class="auth-btn login-btn">Entrar</a>
+                <a href="../cadastro/index.html" class="auth-btn register-btn">Cadastrar</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="bar-content" aria-hidden="true"></div>
+    </header>
+
+    <!-- Notificações Internas -->
+    <div class="internal-notifications">
+        <div class="notification-content">
+            <span class="notification-icon">📢</span>
+            <span class="notification-text">Formulário operacional de pista - Preencha todos os campos obrigatórios</span>
+            <span class="notification-icon">•</span>
+            <span class="notification-text">Líderes e supervisores podem acessar os relatórios na seção de análises</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Formulário Operacional de Pista</h1>
+                <p class="page-subtitle">Registro de atividades e ocorrências para supervisão e liderança</p>
+            </div>
+
+            <div class="form-container">
+                <form id="operacional-form" class="operational-form">
+                    <!-- Informações Básicas -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            Informações Básicas
+                        </h2>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="data-operacao" class="form-label">Data da Operação *</label>
+                                <input type="date" id="data-operacao" name="data-operacao" class="form-input" required>
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <label for="horario" class="form-label">Horario *</label>
+                                <input type="text" id="Horario" name="Horario" class="form-input" placeholder="Horario" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="responsavel" class="form-label">Responsável *</label>
+                                <input type="text" id="responsavel" name="responsavel" class="form-input" placeholder="Nome do responsável" required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="text" id="email" name="email" class="form-input" placeholder="E-mail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Rota *</label>
+                                <input type="text" id="rota" name="rota" class="form-input" placeholder="Rota" required>
+                                
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label for="setor" class="form-label">Setor *</label>
+                                <select id="setor" name="setor" class="form-select" required>
+                                    <option value="">Selecione o setor</option>
+                                    <option value="pista-a">Pista A</option>
+                                    <option value="pista-b">Pista B</option>
+                                    <option value="terminal-cargas">Terminal de Cargas</option>
+                                    <option value="hangar">Hangar</option>
+                                    <option value="rampa">Rampa</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Atividades Realizadas -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">✅</span>
+                            Atividades Realizadas
+                        </h2>
+                        
+                        <div class="form-group">
+                            <label for="atividades" class="form-label">Descrição das Atividades *</label>
+                            <textarea id="atividades" name="atividades" class="form-textarea" rows="4" placeholder="Descreva as principais atividades realizadas durante o turno..." required></textarea>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="voos-atendidos" class="form-label">Voo Realizado</label>
+                                <input type="number" id="voo-realizado" name="voo-realizado" class="form-input" min="0000" placeholder="0000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="carga-movimentada" class="form-label">Carga Movimentada (kg)</label>
+                                <input type="number" id="carga-movimentada" name="carga-movimentada" class="form-input" min="0" step="0.01" placeholder="0.00">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ocorrências -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">⚠️</span>
+                            Ocorrências e Observações
+                        </h2>
+                        
+                        <div class="form-group">
+                            <label for="tipo-ocorrencia" class="form-label">Tipo de Ocorrência</label>
+                            <select id="tipo-ocorrencia" name="tipo-ocorrencia" class="form-select">
+                                <option value="">Nenhuma ocorrência</option>
+                                <option value="atraso">Atraso de Voo</option>
+                                <option value="manutencao">Manutenção de Equipamento</option>
+                                <option value="seguranca">Incidente de Segurança</option>
+                                <option value="clima">Condições Climáticas</option>
+                                <option value="operacional">Problema Operacional</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="descricao-ocorrencia" class="form-label">Descrição da Ocorrência</label>
+                            <textarea id="descricao-ocorrencia" name="descricao-ocorrencia" class="form-textarea" rows="3" placeholder="Descreva detalhadamente a ocorrência (se houver)..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="acoes-tomadas" class="form-label">Ações Tomadas</label>
+                            <textarea id="acoes-tomadas" name="acoes-tomadas" class="form-textarea" rows="3" placeholder="Descreva as ações tomadas para resolver a situação..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Upload de Fotos -->
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📸</span>
+                            Evidências Fotográficas
+                        </h2>
+                        
+                        <div class="upload-area" id="upload-area">
+                            <div class="upload-content">
+                                <div class="upload-icon">📁</div>
+                                <p class="upload-text">Clique aqui ou arraste as fotos para fazer upload</p>
+                                <p class="upload-hint">Formatos aceitos: JPG, PNG, PDF (máx. 5MB cada)</p>
+                            </div>
+                            <input type="file" id="fotos" name="fotos" class="file-input" multiple accept="image/*,.pdf">
+                        </div>
+                        
+                        <div id="file-list" class="file-list"></div>
+                    </div>
+
+                    <!-- Botões de Ação -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="limparFormulario()">
+                            <span class="btn-icon">🗑️</span>
+                            Limpar Formulário
+                        </button>
+                        
+                        <button type="button" class="btn btn-draft" onclick="salvarRascunho()">
+                            <span class="btn-icon">💾</span>
+                            Salvar Rascunho
+                        </button>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">📤</span>
+                            Enviar Relatório
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Relatório Enviado com Sucesso!</h3>
+                <button class="modal-close" onclick="fecharModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✅</div>
+                <p>Seu relatório operacional foi enviado e está disponível para análise dos líderes e supervisores.</p>
+                <p><strong>Protocolo:</strong> <span id="protocolo-numero"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="fecharModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../script.js"></script>
+    <script src="operacional.js"></script>
+</body>
+</html>
+

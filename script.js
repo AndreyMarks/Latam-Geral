@@ -339,3 +339,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// ================= DROPDOWN FUNCTIONALITY =================
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        // Desktop hover functionality
+        dropdown.addEventListener('mouseenter', () => {
+            dropdown.classList.add('dropdown');
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+            dropdown.classList.remove('dropdown');
+        });
+        
+        // Mobile click functionality
+        if (window.innerWidth <= 768) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            });
+        }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-item.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});
+
