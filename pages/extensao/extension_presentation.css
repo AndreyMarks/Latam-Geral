@@ -318,3 +318,17 @@ body {
     }
 }
 
+
+
+/* Header ocultável */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease;
+  z-index: 9999;
+}
+
+header.hidden {
+  top: -80px; /* altura do header */
+}
